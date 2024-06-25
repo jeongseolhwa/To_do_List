@@ -13,7 +13,6 @@ function App() {
      {/* <Signup></Signup> */}
      {/* <DetailList></DetailList> */}
      <PlusList></PlusList>
-     {/* test */}
     </div>
   );
 }
