@@ -1,8 +1,15 @@
-// Home.jsx
 import React from 'react';
-import '../css/Home.css'
+import '../css/Home.css';
+import TodoItem from '../page/component/TodoItem'; // 새로 생성된 TodoItem 컴포넌트 import
 
 function Home() {
+  const todos = [
+    { date: 'D-10', text: '종강' },
+    { date: '3/2 월', text: '종강' },
+    { date: 'D-10', text: '종강' },
+    { date: 'D-10', text: '종강' }
+  ];
+
   return (
     <div className="home-container">
       <header className="header">
@@ -11,22 +18,9 @@ function Home() {
       </header>
       <main className="main-content">
         <ul className="todo-list">
-          <li className="todo-item">
-            <span className="todo-date">D-10</span>
-            <span className="todo-text">종강</span>
-          </li>
-          <li className="todo-item">
-            <span className="todo-date">3/2 월</span>
-            <span className="todo-text">종강</span>
-          </li>
-          <li className="todo-item">
-            <span className="todo-date">D-10</span>
-            <span className="todo-text">종강</span>
-          </li>
-          <li className="todo-item">
-            <span className="todo-date">D-10</span>
-            <span className="todo-text">종강</span>
-          </li>
+          {todos.map((todo, index) => (
+            <TodoItem key={index} date={todo.date} text={todo.text} />
+          ))}
         </ul>
       </main>
       <footer className="footer">
